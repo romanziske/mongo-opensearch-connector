@@ -1,0 +1,13 @@
+mongo-url = "mongodb://admin:admin@mongo-sigmf:27017"
+
+elasticsearch-urls = ["http://opensearch-node1:9200"]
+elasticsearch-user = "admin"
+elasticsearch-password = "admin"
+
+direct-read-namespaces = ["iqdm.sigmf", "iqdm.collection"]
+change-stream-namespaces = ["iqdm.sigmf", "iqdm.collection"]
+
+
+[[script]]
+namespace = "iqdm.collection" 
+path="./script.js"

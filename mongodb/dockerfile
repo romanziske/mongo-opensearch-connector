@@ -1,0 +1,11 @@
+ARG DOCKER_HUB_PROXY
+FROM ${DOCKER_HUB_PROXY}mongo:5.0
+RUN echo "rs.initiate({'_id':'rs0', members: [{'_id':1, 'host':'127.0.0.1:27017'}]});" > "/docker-entrypoint-initdb.d/init_replicaset.js"
+
+COPY keyfile /opt/keyfile
+RUN chmod 600 /opt/keyfile
+RUN chown 999:999 /opt/keyfile
+
+COPY init-mongo.js /docker-entrypoint-initdb.d/init.mongo.js
+
+CMD ["mongod", "--replSet", "rs0", "--bind_ip_all", "--keyFile", "/opt/keyfile"]
