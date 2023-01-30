@@ -5,16 +5,34 @@ This project syncs mongodb and opensearch by using monstache. The monstache prot
 
 1. Add sigmf document
 ```console 
-python mongo-client.py --add "example.sigmf-meta"
+python mongo-client.py --add "exampleA.sigmf-meta"
 ```
+
 Remeber the uuids of the inserted sigfm documents
 
 2. Add collection document
 ```console 
-python mongo-client.py --addC "UUID" --addC "UUID1"
+python mongo-client.py --addC "UUID"
 ```
 
-3. Query Opensearch to see the joined document
+3. Add sigmf document
 ```console 
-python os-client.py --all "iqdm.collection"
+python mongo-client.py --add "exampleB.sigmf-meta"
+```
+
+Remeber the uuids of the inserted sigfm documents
+
+4. Add collection document
+```console 
+python mongo-client.py --addC "UUID"
+```
+
+5. Query Opensearch to see the joined document
+```console 
+python os-client.py --all "iqdm"
+```
+
+6. Execute full-text search query
+```console
+python os-client.py --query "matlab"
 ```

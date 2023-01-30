@@ -19,7 +19,7 @@ opensearch = OpenSearch(
     ssl_show_warn = False
 )
 
-index_name = 'iqdm.sigmf'
+index_name = 'iqdm'
 
 
 def create_index(index_name):
