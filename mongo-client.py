@@ -22,13 +22,17 @@ def add_document(file_name):
         logger.info(f'Added document: {result.inserted_id}')
 
 def update_document(id):
-    result = sigmf_collection.update_one({'_id': ObjectId(id)},  {'$set': {"global.core:updated": "Updated"}}) 
+    result = sigmf_collection.update_one({'_id': ObjectId(id)},  {'$set': {"global.core:updated": "Updated..."}}) 
     logger.info(f'Updated documents: {result.modified_count}')
 
 def add_collection_document(datasets):
     with open("collection.json") as f:
         document = json.load(f)
-        document['datasets'] = datasets
+        datasetList = []
+        for dataset in datasets:  
+            datasetList.append( ObjectId(dataset))
+
+        document['datasets'] = datasetList
         result = collection_collection.insert_one(document)
         logger.info(f'Added document: {result.inserted_id}')
 

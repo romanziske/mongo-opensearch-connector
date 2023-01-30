@@ -4,10 +4,21 @@ elasticsearch-urls = ["http://opensearch-node1:9200"]
 elasticsearch-user = "admin"
 elasticsearch-password = "admin"
 
-direct-read-namespaces = ["iqdm.sigmf", "iqdm.collection"]
+direct-read-namespaces = ["iqdm.collection"]
 change-stream-namespaces = ["iqdm.sigmf", "iqdm.collection"]
 
+[[mapping]]
+namespace = "iqdm.collectionView"
+index = "iqdm"
 
-[[script]]
-namespace = "iqdm.collection" 
-path="./script.js"
+[[relate]]
+namespace = "iqdm.collection"
+with-namespace = "iqdm.collectionView"
+keep-src = false
+
+[[relate]]
+namespace = "iqdm.sigmf" 
+with-namespace = "iqdm.collection"
+src-field = "_id"
+match-field = "datasets" 
+keep-src = false

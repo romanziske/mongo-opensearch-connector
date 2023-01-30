@@ -1,7 +1,7 @@
 module.exports = function (doc) {
     if (doc.datasets) {
-        doc.datasets = doc.datasets.map(function (dataset) {
-            return findId(dataset, {
+        doc.datasets = doc.datasets.map(function (datasetID) {
+            return findId(datasetID, {
                 database: "iqdm",
                 collection: "sigmf"
             });
