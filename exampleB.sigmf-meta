@@ -1,0 +1,43 @@
+{
+  "global": {
+    "core:datatype": "cf32_le",
+    "core:sample_rate": 8.192E7,
+    "core:description": "This file contains the meta data of an example recording.",
+    "core:author": "jane.doe@domain.org",
+    "core:version": "2.3.0",
+    "core:num_channels": 1,
+    "core:sha512": "c1b605eff139890ad0a231c3af67de765c16f5b51b20c8be554f9bf11299f57f09ecacd9dd82c1bb9eb048fbe022b9d2daf53d87f1c2ca191de35cb54cbc6474",
+    "core:recorder": "Recorder",
+    "core:hw": "SW-Simulation"
+  },
+  "captures": [
+    {
+      "core:datetime": "2022-07-07T14:44:47.786964Z",
+      "core:frequency": 9.82E7,
+      "core:sample_start": 0
+    }
+  ],
+  "annotations": [
+    {
+      "core:sample_start": 188416,
+      "core:sample_count": 189212,
+      "core:label": "Type: Pulse Radar 10 (partly)",
+      "core:freq_lower_edge": 5.3037289E7,
+      "core:freq_upper_edge": 5.4065145E7
+    },
+    {
+      "core:sample_start": 195261,
+      "core:sample_count": 196545,
+      "core:label": "Type: Pulse Radar 10",
+      "core:freq_lower_edge": 3.7995579E7,
+      "core:freq_upper_edge": 4.1310631E7
+    },
+    {
+      "core:sample_start": 197010,
+      "core:sample_count": 200055,
+      "core:label": "Type: Pulse Radar 10",
+      "core:freq_lower_edge": 5.7338621E7,
+      "core:freq_upper_edge": 6.5810322E7
+    }
+  ]
+}
